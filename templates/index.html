@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TaskFlow</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
 <body>
-<h1>Welcome to TaskFlow</h1>
-<p> Your smart student planner</p>
-<a href="/tasks">Go to Tasks</a><br><br>
-<a href="/about">About </a>
+    <div class="container">
+        <h1>TaskFlow 🚀</h1>
+        <p style="color: #666; margin-bottom: 20px;">
+            Organize your tasks. Stay productive. Stay focused.
+        </p>
+
+        <a href="/tasks">
+            <button style="width: 100%;">Go to Task Manager</button>
+        </a>
+
+        <br><br>
+
+        <a class="back-link" href="/about">About</a>
+    </div>
 </body>
 </html>

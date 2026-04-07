@@ -5,23 +5,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Task Manager 📋</h1>
+    <div class="container">
+        <h1>TaskFlow 📋</h1>
 
-    <form method="POST">
-        <input type="text" name="task" placeholder="Enter a task" required>
-        <button type="submit">Add Task</button>
-    </form>
+        <form method="POST">
+            <input type="text" name="task" placeholder="Enter a task..." required>
+            <button type="submit">Add</button>
+        </form>
 
-    <ul>
-        {% for task in tasks %}
-            <li>
-                {{ task }}
-                <a href="/delete/{{ loop.index0 }}">❌</a>
-            </li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    {{ task }}
+                    <a class="delete-btn" href="/delete/{{ loop.index0 }}">✖</a>
+                </li>
+            {% endfor %}
+        </ul>
 
-    <br>
-    <a href="/">Go Home</a>
+        <a class="back-link" href="/">← Back Home</a>
+    </div>
 </body>
 </html>
