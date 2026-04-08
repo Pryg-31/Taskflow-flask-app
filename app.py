@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-tasks = []
+tasks = ["Sample Task"] # default task
 
 @app.route("/")
 def index():
@@ -19,7 +19,8 @@ def task_page():
 
 @app.route("/delete/<int:index>")
 def delete(index):
-    tasks.pop(index)
+    if 0 <= index < len(tasks):
+        tasks.pop(index)
     return redirect("/tasks")
 
 @app.route("/about")
@@ -27,4 +28,4 @@ def about():
     return render_template("about.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
